@@ -3,6 +3,10 @@
 1. 本年度の授業内容の説明
 
 # 昨年度の授業の振り返り
+* [課題1](https://github.com/cupperservice/HJ-2021/tree/main/G1/課題1)
+* [課題2](https://github.com/cupperservice/HJ-2021/tree/main/G1/課題2)
+* [課題3](https://github.com/cupperservice/HJ-2021/tree/main/G1/課題3)
+
 # 本年度の授業内容の説明
 ## ゴール
 Webアプリケーションを作成して、AWS環境に配備する
