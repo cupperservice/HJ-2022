@@ -21,7 +21,7 @@ Webアプリケーションを作成して、AWS環境に配備する
 「AWS Academy Cloud Foundations」
 
 ---
-## Webアプリケーションを構築するリソールを理解する
+## Webアプリケーションを構築するサービスを理解する
 * DynamoDB  
 セッション情報を保管する
 * RDS  
