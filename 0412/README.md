@@ -41,6 +41,7 @@ Applicationサーバの生存監視及び、クライアントからのリクエ
 * [express](https://expressjs.com/ja/)
 * [ejs](https://www.npmjs.com/package/ejs)
 * [mysql](https://www.npmjs.com/package/mysql)
+* [VSCode](https://azure.microsoft.com/ja-jp/products/visual-studio-code/)
 
 ## 演習
 Webアプリケーションを作成して、AWS上に環境を構築する。
