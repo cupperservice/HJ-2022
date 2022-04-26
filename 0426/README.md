@@ -17,6 +17,14 @@
 ## テンプレートエンジン
 [こちらのページ](https://www.digitalocean.com/community/tutorials/how-to-use-ejs-to-template-your-node-application-ja)を参考に以下のページを表示できるようにする
 
+* クエリーパラメータで指定した名前を埋め込んだページを表示する
+  * クエリーパラメータ：https://hogehoge.com?name=kawashima
+
+* 表示するページ
+```
+Hello kawashima さん
+```
+
 ---
 ## 課題
 以下のアプリケーションを作成する
