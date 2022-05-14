@@ -127,7 +127,7 @@ VALUES ('user1@sist.ac.jp', '1bcdbccff1c3d3ae287905e0850e6afbb56010276f0a9a52ae1
   })
   ```
 
-* DBへ接続
+* DBへ接続する
   ```
   connection.connect((err) => {
     // DBへの接続に失敗した場合の処理
@@ -138,7 +138,11 @@ VALUES ('user1@sist.ac.jp', '1bcdbccff1c3d3ae287905e0850e6afbb56010276f0a9a52ae1
 * テーブルからデータを読み込む
   ```
   connection.query('SELECT * FROM user', (err, results, fields) => {
-    if (err) throw err
+    if (err) {
+      // エラー処理
+      throw err
+    }
+
     // 読み込んだデータを以下のフォーマットで出力
     // no: 番号
     //   id:ユーザーID
@@ -154,9 +158,19 @@ VALUES ('user1@sist.ac.jp', '1bcdbccff1c3d3ae287905e0850e6afbb56010276f0a9a52ae1
     //   id:user2@sist.ac.jp
     //   name:Hamajo Jiro
     //   password:5f5b24ad65531525ddcccace0598dafaa386e30749babf12c7b0cda2af45c582
+    
+    // 取得したレコードの数
+    // results.length
+
+    // カラムの値の取得
+    // results[レコード番号].カラム名
   })
   ```
 
+* DBから切断する
+  ```
+  connection.end()
+  ```
 ---
 ## Githubを使用してリソースを管理する
 ### Githubのアカウントを作成する
@@ -173,19 +187,25 @@ VALUES ('user1@sist.ac.jp', '1bcdbccff1c3d3ae287905e0850e6afbb56010276f0a9a52ae1
 
 * プロジェクトの構成
 
-```
-top
-+-- app
-  +-- controller
-    +-- login.js
-    +-- top.js
-  +-- repository
-    +-- user_repository.js
-  +-- main.js
-+-- template
-  +-- login.ejs
-  +-- top.ejs
-+-- services
-  +-- db
-+-- docker-compose.yml
-```
+  ```
+  top
+  +-- app
+      +-- controller
+          +-- login.js
+      +-- repository
+          +-- user_repository.js
+      +-- views
+          +-- login.ejs
+          +-- top.ejs
+      +-- main.js
+  +-- services
+      +-- db
+  +-- docker-compose.yml
+  ```
+
+* 文字列をハッシュ化する
+  ```
+  const crypto = require('crypto')
+
+  crypto.createHash('sha256').update(パスワード).digest('hex')
+  ```
