@@ -80,10 +80,10 @@ sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 
 ### ユーザー情報を管理するデータベースを作成する
 1. コンテナに乗り込む  
-`docker-compose exec mydb bash`
+`docker-compose exec db bash`
 
 2. mysqlへ接続する
-`mysql -uroot -proot mydb`
+`mysql -uroot -proot db`
 
 3. ユーザーデータを登録する
 * テーブルの作成
