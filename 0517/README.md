@@ -83,7 +83,7 @@ sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 `docker-compose exec db bash`
 
 2. mysqlへ接続する
-`mysql -uroot -proot db`
+`mysql -uroot -proot mydb`
 
 3. ユーザーデータを登録する
 * テーブルの作成
