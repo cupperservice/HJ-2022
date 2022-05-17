@@ -131,7 +131,7 @@ VALUES ('user1@sist.ac.jp', '1bcdbccff1c3d3ae287905e0850e6afbb56010276f0a9a52ae1
   ```
   connection.connect((err) => {
     // DBへの接続に失敗した場合の処理
-    throw err
+    if (err) throw err
   })
   ```
 
