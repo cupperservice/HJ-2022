@@ -223,4 +223,4 @@ VALUES ('user1@sist.ac.jp', '1bcdbccff1c3d3ae287905e0850e6afbb56010276f0a9a52ae1
   crypto.createHash('sha256').update(パスワード).digest('hex')
   ```
 
-* 期限：5/31(月) 17:00
+* 期限：5/30(月) 17:00
