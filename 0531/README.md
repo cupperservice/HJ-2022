@@ -23,6 +23,15 @@ AWS Consoleを使用して画像を保管するBucketをS3上に作成する
 3. 作成したBucketに画像をアップロードする
 AWS Consoleを使用して画像をBucketにアップロードする
 
+4. デフォルトのリージョンを設定する  
+`aws configure`を実行してリージョン(regin)に `us-east-1`を指定する  
+リージョン以外は空EnterでOK
+
+5. EC2にロールを設定する
+* EC2を選択
+* Action -> Security -> Modify IAM Role
+* EMR_EC2_DefaultRoleを選択する
+
 ## S3に保管されている画像をダウンロードする
 S3に保管されている画像をダウンロードするアプリを作成する
 
