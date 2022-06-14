@@ -35,5 +35,5 @@ __アプリケーションを作成する上で解説してほしい技術（Web
 * 演習  
 すべての課題の提出
 
-* AWS Academy Cloud Foundations [16254]  
+* [AWS Academy Cloud Foundations [16254]](https://awsacademy.instructure.com/courses/16254)  
 モジュール６まで完了すること
