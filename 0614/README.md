@@ -23,3 +23,17 @@ __アプリケーションを作成する上で解説してほしい技術（Web
 
 ---
 # [課題の提出状況](https://docs.google.com/spreadsheets/d/1-1IpvcpWOiS16cb5mbHLZIbjfzzXOXL-/edit#gid=2043167784)
+
+---
+# 連絡事項
+前期の授業の最後で一旦、中間時点での成績をだします。
+
+以下を前期の最後の授業までに完了させてください。
+
+必須です。
+
+* 演習  
+すべての課題の提出
+
+* AWS Academy Cloud Foundations [16254]  
+モジュール６まで完了すること
