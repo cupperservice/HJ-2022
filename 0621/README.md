@@ -37,3 +37,13 @@ __アプリケーションを作成する上で解説してほしい技術（Web
 
 * [AWS Academy Cloud Foundations [16254]](https://awsacademy.instructure.com/courses/16254)  
 モジュール６まで完了すること
+
+* 課題の5,6は以下のリポジトリでサンプルコードを公開しています。  
+https://github.com/cupperservice/hj-sample-app
+
+コードをどう書けばよいかわからない人は↑のサンプルコードを使用してください。  
+ただし、その場合は以下を追加で提出してください。
+* 各画面のスナップショット
+  * ログイン画面
+  * ログイン後の画面
+* DynamoDBのテーブルのスナップショット
