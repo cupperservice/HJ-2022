@@ -22,7 +22,7 @@ __アプリケーションを作成する上で解説してほしい技術（Web
 7. [S3に保管されている画像をダウンロードする(ログインアプリに組み込み)](../0531/README.md)
 
 ---
-# [課題の提出状況](https://docs.google.com/spreadsheets/d/1-1IpvcpWOiS16cb5mbHLZIbjfzzXOXL-/edit#gid=2043167784)
+# [課題の提出状況](https://docs.google.com/spreadsheets/d/1_FExPmonZpnGkK04HHlJYqWcvZhdeof4QQSTYkNbwAQ/edit?usp=sharing)
 
 ---
 # 連絡事項
