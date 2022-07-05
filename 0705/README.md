@@ -42,15 +42,21 @@ __アプリケーションを作成する上で解説してほしい技術（Web
 
   * 最終期限：7/11(月) 17:00
 
-  * 課題の5,6は以下のリポジトリでサンプルコードを公開しています。  
-https://github.com/cupperservice/hj-sample-app  
-  
+  * 課題の5,6,7は以下のリポジトリでサンプルコードを公開しています。  
+    * 課題5
+    https://github.com/cupperservice/hj-sample-app/tree/feature/no-session
+    * 課題6
+    https://github.com/cupperservice/hj-sample-app/tree/feature/add-session
+    * 課題7
+    https://github.com/cupperservice/hj-sample-app/tree/feature/download-image
+
      コードをどう書けばよいかわからない人は↑のサンプルコードを使用してください。  
      ただし、その場合は以下を追加で提出してください。
   * 各画面のスナップショット
     * ログイン画面
     * ログイン後の画面
   * DynamoDBのテーブルのスナップショット
+  * S3のバケット内のファイル一覧のスナップショット
 
 * [AWS Academy Cloud Foundations [16254]](https://awsacademy.instructure.com/courses/16254)  
 モジュール６まで完了すること
