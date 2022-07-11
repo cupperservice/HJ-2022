@@ -8,21 +8,5 @@
 * [6/7の授業内容](./0607/README.md)
 * [6/14の授業内容](./0614/README.md)
 * [6/21の授業内容](./0621/README.md)
-
-アプリの配備
-* ELB
-* Target Group
-* 起動テンプレート
-* イメージ
-* ヘルスチェックエンドポイントの追加
-* SystemsManagerでパラメータを管理
-  * db情報(ID/Pass)
-  * ユーザーデータで環境変数に設定
-  * パラメータを環境変数から読み込む
-* 自動起動(pm2)
-
-監視
-* CloudWatch Log
-* lambda
-* SNS
-* EventBridge
+* [7/5の授業内容](./0705/README.md)
+* [7/12の授業内容](./0712/README.md)
