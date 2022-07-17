@@ -76,28 +76,11 @@ EC2 or Cloud9で以下のコマンドを実行する
 EC2 or Cloud9で以下のコマンドを実行する  
 `git clone https://github.com/cupperservice/hj-sample-app.git`
 
-2. Githubでリポジトリを作成する  
-* Repositoriesタブを選択し、New を押す
-* Repository name を入力し、Create repository を押す
-
-3. ローカルリポジトリを作成する  
+2. ローカルリポジトリを作成する  
 EC2 or Cloud9で以下を実行する  
 * ディレクトリを作成する  
 `make xxxxx`  
 xxxxxは任意の値
-
-* 作成したディレクトリの下に以下のファイルを作成する
-  * ファイル名: .gitignore
-  * ファイルの内容:
-    ```
-    node_modules/
-    services/db/data/
-    ```
-
-* 作成したディレクトリの下で以下のコマンドを実行する
-  ```
-  git init
-  ```
 
 * 5. [ログイン機能(DBを使用する)](./0517/README.md)をコピーする 
   * 1.でclone したディレクトリの下で以下のコマンドを実行する  
@@ -113,7 +96,7 @@ xxxxxは任意の値
   * 3. で作成したディレクトリの下で以下のコマンドを実行する  
   `cp -R ../hj-sample-app/* .`
 
-4. サンプルコードを実行する
+3. サンプルコードを実行する
 * DBを起動する  
   `docker-compose up -d`
 
@@ -131,3 +114,45 @@ xxxxxは任意の値
 * ブラウザからEC2 or Cloud9のPublic IPにアクセスする
 
   __EC2 or Cloud9のセキュリティグループにアプリのポートにアクセスを許可すること__
+
+## Githubへの登録
+1. Githubでリポジトリを作成する  
+* Repositoriesタブを選択し、New を押す
+* Repository name を入力し、Create repository を押す
+
+2. 初期化
+* アプリのディレクトリの下に以下のファイルを作成する
+  * ファイル名: .gitignore
+  * ファイルの内容:
+    ```
+    node_modules/
+    services/db/data/
+    ```
+
+* アプリのディレクトリの下で以下のコマンドを実行する
+  ```
+  git init
+  ```
+
+3. リモートリポジトリを追加する
+アプリのディレクトリの下で以下のコマンドを実行する  
+`git remote add origin githubのリポジトリのURL`
+
+    実行例
+    ```
+    $ git remote add origin git@github.com:cuppertest/test2.git
+    ```
+
+4. リソースをローカルリポジトリに登録する  
+アプリのディレクトリの下で以下のコマンドを実行する
+    ```
+    git add .
+    git commit -m "first commit"
+    ```
+
+5. リモートリポジトリに反映する  
+アプリのディレクトリの下で以下のコマンドを実行する  
+    ```
+    git branch -M main
+    git push -u origin main
+    ```
