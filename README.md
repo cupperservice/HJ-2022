@@ -76,13 +76,7 @@ EC2 or Cloud9で以下のコマンドを実行する
 EC2 or Cloud9で以下のコマンドを実行する  
 `git clone https://github.com/cupperservice/hj-sample-app.git`
 
-2. ローカルリポジトリを作成する  
-EC2 or Cloud9で以下を実行する  
-* ディレクトリを作成する  
-`mkdir xxxxx`  
-xxxxxは任意の値
-
-3. [ログイン機能(DBを使用する)](./0517/README.md)をコピーする 
+2. [ログイン機能(DBを使用する)](./0517/README.md)をコピーする 
 * 1.でclone したディレクトリの下で以下のコマンドを実行する  
   `git checkout feature/no-session`
 
@@ -93,27 +87,33 @@ xxxxxは任意の値
      Switched to a new branch 'feature/no-session'
      ```
 
-  * 3. で作成したディレクトリの下で以下のコマンドを実行する  
+3. ローカルリポジトリを作成する  
+EC2 or Cloud9で以下を実行する  
+* ディレクトリを作成する  
+`mkdir xxxxx`  
+xxxxxは任意の値
+
+4. 3.で作成したディレクトリの下で以下のコマンドを実行する  
   `cp -R ../hj-sample-app/* .`
 
-4. サンプルコードを実行する
-* DBを起動する  
+## サンプルコードを実行する
+1. DBを起動する  
   `docker-compose up -d`
 
-* ユーザーデータを登録する  
+2. ユーザーデータを登録する  
 参照: [ログイン機能(DBを使用する)](./0517/README.md)
 
-* モジュールを初期化する  
+3. モジュールを初期化する  
 アプリのディレクトリの下で以下のコマンドを実行する  
 `npm install`
 
-* アプリを起動する  
+4. アプリを起動する  
 アプリのディレクトリの下/appの下で以下のコマンドを実行する  
 `node main.js`
 
-* ブラウザからEC2 or Cloud9のPublic IPにアクセスする
+5. ブラウザからEC2 or Cloud9のPublic IPにアクセスする
 
-  __EC2 or Cloud9のセキュリティグループにアプリのポートにアクセスを許可すること__
+    __EC2 or Cloud9のセキュリティグループにアプリのポートにアクセスを許可すること__
 
 ## Githubへの登録
 1. Githubでリポジトリを作成する  
