@@ -79,7 +79,7 @@ EC2 or Cloud9で以下のコマンドを実行する
 2. ローカルリポジトリを作成する  
 EC2 or Cloud9で以下を実行する  
 * ディレクトリを作成する  
-`make xxxxx`  
+`mkdir xxxxx`  
 xxxxxは任意の値
 
 3. [ログイン機能(DBを使用する)](./0517/README.md)をコピーする 
