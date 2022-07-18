@@ -12,7 +12,7 @@
 * [7/12の授業内容](./0712/README.md)
 * [7/19の授業内容](./0719/README.md)
 
-# サンプルコード([ログイン機能(DBを使用する)](./0517/README.md))の実行方法
+# サンプルコードの実行方法
 ## 前提条件
 以下がセットアップ済みであること
 * git
@@ -71,12 +71,12 @@ EC2 or Cloud9で以下のコマンドを実行する
 * Keyにコピーした公開鍵の値をペースト
 * Add SSH Key を押す
 
-## 実行
+## 実行([ログイン機能(DBを使用する)](./0517/README.md))
 1. サンプルコードをclone  
 EC2 or Cloud9で以下のコマンドを実行する  
 `git clone https://github.com/cupperservice/hj-sample-app.git`
 
-2. [ログイン機能(DBを使用する)](./0517/README.md)をコピーする 
+2. ブランチを切り替える 
 * 1.でclone したディレクトリの下で以下のコマンドを実行する  
   `git checkout feature/no-session`
 
@@ -93,8 +93,9 @@ EC2 or Cloud9で以下を実行する
 `mkdir xxxxx`  
 xxxxxは任意の値
 
-4. 3.で作成したディレクトリの下で以下のコマンドを実行する  
-  `cp -R ../hj-sample-app/* .`
+4. サンプルコードをコピーする  
+3.で作成したディレクトリの下で以下のコマンドを実行する  
+`cp -R ../hj-sample-app/* .`
 
 ## サンプルコードを実行する
 1. DBを起動する  
@@ -156,3 +157,44 @@ xxxxxは任意の値
     git branch -M main
     git push -u origin main
     ```
+
+## 実行([ログイン機能(セッション管理を組み込む)](../0524/README.md) )
+1. ブランチを切り替える 
+* [hj-sample-app](https://github.com/cupperservice/hj-sample-app)をclone したディレクトリの下で以下のコマンドを実行する  
+  `git checkout feature/add-session`
+
+     実行結果
+     ```
+     $ git checkout feature/add-session
+     Branch 'feature/add-session' set up to track remote branch 'feature/add-session' from 'origin'.
+     Switched to a new branch 'feature/add-session'
+     ```
+
+2. サンプルコードをコピーする  
+自分で作成したアプリのディレクトリの下で以下のコマンドを実行する  
+`cp -R ../hj-sample-app/* .`
+
+### 注意
+EC2 or Cloud9のロールにDynamoDBへのアクセス権限を付与すること  
+* [参照](https://github.com/cupperservice/HJ-2022/tree/main/0524)
+
+## 実行([S3に保管されている画像をダウンロードする(ログインアプリに組み込み)](../0531/README.md))
+1. ブランチを切り替える 
+* [hj-sample-app](https://github.com/cupperservice/hj-sample-app)をclone したディレクトリの下で以下のコマンドを実行する  
+  `git checkout feature/download-image`
+
+     実行結果
+     ```
+     $ git checkout feature/download-image
+     Branch 'feature/download-image' set up to track remote branch 'feature/download-image' from 'origin'.
+     Switched to a new branch 'feature/download-image'
+     ```
+
+2. サンプルコードをコピーする  
+自分で作成したアプリのディレクトリの下で以下のコマンドを実行する  
+`cp -R ../hj-sample-app/* .`
+
+### 注意
+* 使用する外部モジュールが増えているので、`npm install` で追加モジュールをインストールすること
+* S3のバケット名は自身の環境の名前に合わせてコードを変更すること
+* `aws configure` でデフォルトプロファイルのリージョンを `us-east-1` に設定しておくこと
