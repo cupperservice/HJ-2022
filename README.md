@@ -82,8 +82,8 @@ EC2 or Cloud9で以下を実行する
 `make xxxxx`  
 xxxxxは任意の値
 
-* 5. [ログイン機能(DBを使用する)](./0517/README.md)をコピーする 
-  * 1.でclone したディレクトリの下で以下のコマンドを実行する  
+3. [ログイン機能(DBを使用する)](./0517/README.md)をコピーする 
+* 1.でclone したディレクトリの下で以下のコマンドを実行する  
   `git checkout feature/no-session`
 
      実行結果
@@ -96,7 +96,7 @@ xxxxxは任意の値
   * 3. で作成したディレクトリの下で以下のコマンドを実行する  
   `cp -R ../hj-sample-app/* .`
 
-3. サンプルコードを実行する
+4. サンプルコードを実行する
 * DBを起動する  
   `docker-compose up -d`
 
