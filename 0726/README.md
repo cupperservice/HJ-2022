@@ -12,7 +12,7 @@
 * サムネイルをクリックし、画像をダウンロードできる
 
 ## システム構成図
-![system](./img/system.png)
+![system](./img/System.png)
 
 * ALB(Application Load Balancer)  
 https://aws.amazon.com/jp/elasticloadbalancing/
