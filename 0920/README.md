@@ -3,4 +3,4 @@
 * AWS Academy Cloud Foundations モジュール 5から
 
 ### 実施結果
-モジュール
+モジュール5, 6のEC2のデモまで
