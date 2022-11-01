@@ -39,3 +39,8 @@ DBに接続したら以下のコマンドを実行してデータベースを確
 2. 4.の結果
 
 3. ポート番号を書き込んだシステム構成図
+
+## 注意事項
+1025の授業でlocalstackを動かしている場合は、terraform planでAWSへの認証ができなくて失敗するので以下を実施してください。
+
+AWS AcademyのAWS Details -> AWS CLI Showを押して表示された認証情報を `~/.aws/credentials` にコピペする
