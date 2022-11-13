@@ -2,19 +2,35 @@
 ## 公式ドキュメント
 https://docs.aws.amazon.com/ja_jp/lambda/latest/dg/welcome.html
 
+## JavaScript用 AWS SDK
+https://docs.aws.amazon.com/ja_jp/sdk-for-javascript/v2/developer-guide/welcome.html
+
+## 準備
+AWS CLI v2にアップデートする
+
+1. AWS CLI(v1)をアンインストールする
+
+    `sudo pip uninstall awscli -y`
+
+2. AWS CLI(v2)をインストールする
+
+    ```
+    curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+    unzip awscliv2.zip
+    sudo ./aws/install -i /usr/local/aws-cli -b /usr/local/bin
+    ```
+
 ## Lambda関数を作成する
 1. Lambda関数のコードを作成する
 
     `thumbnail.js` に以下のコードを記述する
 
     ``` JavaScript
-    exports.handler = (event, context) => {
-      return new Promise((resolve, reject) => {
+    exports.handler = async (event, context) => {
         console.log("called thumbnail function!!!")
         console.log(event)
         console.log(context)
-        resolve(200)
-      })
+        return 200
     }
     ```
 
@@ -62,6 +78,10 @@ https://docs.aws.amazon.com/ja_jp/lambda/latest/dg/welcome.html
     ``` JavaScript
     const AWS = require('aws-sdk')
 
+    AWS.config.update({
+      region: 'us-east-1'
+    })
+
     const lambda = new AWS.Lambda()
 
     const param = {
@@ -88,11 +108,15 @@ https://docs.aws.amazon.com/ja_jp/lambda/latest/dg/welcome.html
     )
     ```
 
-2. 1.で作成したJavaScriptを実行する
+2. `npm init` で初期化
+
+3. `npm install aws-sdk` でライブラリをインストール
+
+4. 1.で作成したJavaScriptを実行する
 
     `node index.js`
 
-3. 実行結果をAWS Management Consoleで確認する
+5. 実行結果をAWS Management Consoleで確認する
 
 ## Thumbnailを作成するコードをLambdaに実装する
 以下の部品から要件を満たすLambda関数を作成する
@@ -121,6 +145,15 @@ https://docs.aws.amazon.com/ja_jp/lambda/latest/dg/welcome.html
     `sharp`
 
 ### 部品
+#### 初期化
+``` JavaScript
+const AWS = require('aws-sdk')
+const sharp = require('sharp')
+
+AWS.config.update({region: 'us-east-1'})
+const S3 = new AWS.S3()
+```
+
 #### S3から画像を読み込む
 ``` JavaScript
 const downloadImage = (bucket, key) => {
@@ -170,7 +203,7 @@ https://docs.aws.amazon.com/ja_jp/lambda/latest/dg/configuration-layers.html
 
 2. zipで固める
 
-    `zip -r layer.zip nodejs/node_modules`
+    `zip -r sharp.zip nodejs/node_modules`
 
 2. layerを登録する
 
@@ -197,19 +230,19 @@ https://docs.aws.amazon.com/ja_jp/lambda/latest/dg/configuration-layers.html
 aws lambda invoke \
 --function-name thumbnail \
 --log-type Tail \
---query 'LogResult' \
---output text \
---payload $(echo '{
+--payload "$(echo '{
 "s3":{
   "original":{
-    "bucket_name":"kaz-original-202211",
-    "key":"hoge.png"
+    "bucket_name":"オリジナル画像のバケット",
+    "key":"画像オブジェクトのKey"
   },
   "thumbnail":{
-    "bucket_name":"kaz-thumbnail-202211"
+    "bucket_name":"サムネイル画像のバケット"
     }
   }
-}' | base64) \
+}' | base64)" \
 out \
+--output text \
+--query 'LogResult' \
 | base64 -d
 ```
