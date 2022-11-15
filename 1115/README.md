@@ -40,15 +40,19 @@ public ipがないのでawsコマンドの実行ができない状態だった
 common/asg.tfのaws_launch_templateを以下のように修正
 
 以下の定義を削除
+```
   vpc_security_group_ids = [
     aws_security_group.app.id
   ]
+```
 
 以下を追加
+```
   network_interfaces {
     associate_public_ip_address = true
     security_groups = [aws_security_group.app.id]
   }
+```
 
 【皆さんの対応】
 自身のリポジトリに↑を反映してください。
