@@ -219,15 +219,19 @@ exports.handler = async (event, context) => {
 公式ドキュメント  
 https://docs.aws.amazon.com/ja_jp/lambda/latest/dg/configuration-layers.html
 
-1. layerをダウンロード
+1. ディレクトリ `nodejs` を作成する
+
+2. [package.json](./nodejs/package.json) を `nodejs` の下にコピー
+
+3. layerをダウンロード
 
     `nodejs` の下で `npm install` を実行する
 
-2. zipで固める
+4. zipで固める
 
     `zip -r sharp.zip nodejs/node_modules`
 
-2. layerを登録する
+5. layerを登録する
 
     ```
     aws lambda publish-layer-version \
@@ -238,7 +242,7 @@ https://docs.aws.amazon.com/ja_jp/lambda/latest/dg/configuration-layers.html
     --compatible-architectures "x86_64" 
     ```
 
-3. lambda関数にLayerを関連付ける
+6. lambda関数にLayerを関連付ける
 
     ```
     aws lambda update-function-configuration \
