@@ -193,6 +193,28 @@ const uploadImage = (bucket, key, input) => {
 }
 ```
 
+#### Lamda本体のコード
+
+```
+exports.handler = async (event, context) => {
+  console.log("start create thumbnail function!!!")
+  const image = await downloadImage(
+    event.s3.original.bucket_name,
+    event.s3.original.key
+  )
+
+  const thumbnail = await createThumbnail(image)
+
+  const result = await uploadImage(
+    event.s3.thumbnail.bucket_name,
+    event.s3.original.key,
+    thumbnail)
+
+  console.log('finished create thumbnail function!!!')
+  return result
+}
+```
+
 ### sharpをLayerに登録する
 公式ドキュメント  
 https://docs.aws.amazon.com/ja_jp/lambda/latest/dg/configuration-layers.html
