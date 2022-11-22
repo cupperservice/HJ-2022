@@ -116,3 +116,9 @@ common/asg.tfのaws_autoscaling_groupに以下を追加
 10. 環境変数を設定 ([参照](https://github.com/cupperservice/hj-sample-infra#template%E3%82%B5%E3%83%BC%E3%83%90%E3%81%AE%E6%A7%8B%E7%AF%89))
 
 11. `node add_user.js user.csv` を実行
+
+# 課題
+* [Lambda関数を使ってみる](../Lambda関数を使ってみる/README.md)
+* 提出期限：11/28(月) 17:00
+* 提出方法：  
+チャットで川嶋に連絡
