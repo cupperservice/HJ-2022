@@ -195,7 +195,7 @@ const uploadImage = (bucket, key, input) => {
 
 #### Lamda本体のコード
 
-```
+``` JavaScript
 exports.handler = async (event, context) => {
   console.log("start create thumbnail function!!!")
   const image = await downloadImage(
