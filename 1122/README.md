@@ -4,7 +4,7 @@
 
 ## 演習
 1. [Lambda関数を使ってみる](../Lambda関数を使ってみる/README.md)
-2 [インフラ構築](https://github.com/cupperservice/hj-sample-infra)演習
+2. [インフラ構築](https://github.com/cupperservice/hj-sample-infra)演習
 
 ## 注意事項
 1025の授業でlocalstackを動かしている場合は、terraform planでAWSへの認証ができなくて失敗するので以下を実施してください。
@@ -88,7 +88,7 @@ common/asg.tfのaws_autoscaling_groupに以下を追加
 5. 表示されたダイアログで以下を実施
 
     1. Create final snapshot? のチェックを外す
-    2. チェックする
+    2. I acknowledge ..... をチェックする
     3. テキストボックスに delete me を入力
     4. Delete ボタンを押す
 
