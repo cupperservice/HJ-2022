@@ -47,7 +47,7 @@ AWS CLI v2にアップデートする
     --zip-file fileb://thumbnail.zip \
     --handler thumbnail.handler \
     --runtime nodejs16.x \
-    --role arn:aws:iam::968091568851:role/LabRole \
+    --role 自分の環境のLabRoleのARN \
     --timeout 60
     ```
 
