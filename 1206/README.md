@@ -73,6 +73,14 @@ common/asg.tfのaws_autoscaling_groupに以下を追加
 【皆さんの対応】
 自身のリポジトリに↑を反映してください。
 
+4. EC2に設定していたロール(EMR_EC2_DefaultRole)にはポリシーを追加してはいけなかった
+
+【皆さんの対応】
+1. terraformの以下のファイルの `EMR_EC2_DefaultRole` を `LabInstanceProfile` に変更
+    * common/asg.tf
+    * common/ec2.tf
+2. terraform apply で適用する
+
 ## RDSの削除について
 使用している Aurora はクレジットの消費率が高いので作業終了後に削除してください。
 
