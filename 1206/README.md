@@ -12,7 +12,7 @@
 AWS AcademyのAWS Details -> AWS CLI Showを押して表示された認証情報を `~/.aws/credentials` にコピペする
 
 ## 問題に対する対応
-1. scripts/app.serviceの間違い
+### 1. scripts/app.serviceの間違い
 以下の定義が不足していたので自動起動がONにならなかった
 
 [Install]
@@ -33,9 +33,8 @@ After=cloud-final.service
 【皆さんの対応】
 hj-sample-appの下で git pull を実行してリポジトリを更新してください
 
-ーーーーー
-
-2. 起動テンプレートでappサーバにpublic ipを割り当てる必要があった
+---
+### 2. 起動テンプレートでappサーバにpublic ipを割り当てる必要があった
 public ipがないのでawsコマンドの実行ができない状態だった
 
 common/asg.tfのaws_launch_templateを以下のように修正
@@ -58,9 +57,8 @@ common/asg.tfのaws_launch_templateを以下のように修正
 【皆さんの対応】
 自身のリポジトリに↑を反映してください。
 
-ーーーーー
-
-3. Auto Scaling GroupとALBの関連付けができていなかった
+---
+### 3. Auto Scaling GroupとALBの関連付けができていなかった
 
 以下の定義を削除
 common/asg.tfのaws_autoscaling_attachment
@@ -73,7 +71,8 @@ common/asg.tfのaws_autoscaling_groupに以下を追加
 【皆さんの対応】
 自身のリポジトリに↑を反映してください。
 
-4. EC2に設定していたロール(EMR_EC2_DefaultRole)にはポリシーを追加してはいけなかった
+---
+### 4. EC2に設定していたロール(EMR_EC2_DefaultRole)にはポリシーを追加してはいけなかった
 
 【皆さんの対応】
 1. terraformの以下のファイルの `EMR_EC2_DefaultRole` を `LabInstanceProfile` に変更
