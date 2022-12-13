@@ -52,9 +52,6 @@ hj-sample-infra の下に [lambda](https://github.com/cupperservice/hj-sample-in
 3. 定義を反映する  
 `terraform apply`
 
-4. EC2 に Lambda 関数の呼び出し権限を追加  
-EMR_EC2_DefaultRole に ポリシー(AWSLambda_FullAccess)を追加
-
 ---
 ## template サーバの更新
 * Lambda を使用するバージョンのアプリケーション  
