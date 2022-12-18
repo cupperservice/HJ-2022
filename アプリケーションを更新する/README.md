@@ -54,12 +54,36 @@ hj-sample-infra の下に [lambda](https://github.com/cupperservice/hj-sample-in
 
 ---
 ## template サーバの更新
-* Lambda を使用するバージョンのアプリケーション  
-https://github.com/cupperservice/hj-sample-app/tree/feature/use_lambda
+1. Cloud9からbastionサーバにSSH接続する
 
-### 更新手順
-1. bastion サーバのアプリケーションを更新する
-2. template サーバのアプリケーションを更新する  
-  アプリ更新後に再起動して動作確認すること
-3. template サーバのイメージ(AMI)を作成する
-4. 新しく作成したイメージ(AMI)でアプリを更新する
+2. 新しいバージョンのアプリケーションを取得する  
+`hj-sample-app` の下で `git clone` を実行する
+
+3. template サーバにアプリケーションをコピーする  
+    ```
+    IP_TEMPLATE=TemplateサーバのPrivate IPアドレス
+    rsync -tav hj-sample-app/ ec2-user@"$IP_TEMPLATE":/opt/appsvr/
+    ```
+
+4. アプリケーションを再起動する  
+`sudo systemctl restart app`
+
+5. ブラウザから template サーバにアクセスして正常に動作することを確認する  
+__注意__: インターネットからアクセスできるように template サーバのセキュリティグループを編集すること
+
+6. 正常に動作していることを確認する
+    * S3のバケットを確認してサムネイル画像が登録されていることを確認する
+    * CloudWatch LogsでLambdaが正常動作していることを確認する  
+CloudWatch Logs -> Log Groups(/aws/lambda/thumbnail)に以下のログが出ていれば正常動作している  
+`INFO finished create thumbnail function!!!`
+
+7. template サーバのイメージを作成する
+
+---
+## アプリケーションサーバを更新する
+1. 起動中の Application サーバ (app-sg) を停止する
+
+2. 新しいインスタンスが立ち上がるのを待つ
+
+3. 動作確認  
+新しい Application サーバのインスタンスが立ち上がったら、アプリケーションが正常に動作していることを確認する
