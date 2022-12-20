@@ -20,6 +20,33 @@
 ### [演習課題](./演習課題（後期）/README.md)
 
 ---
+### __注意事項__
+作業完了後に以下を実施すること
+1. AutoScaling Groupのインスタンス数を0に変更する
+    1. EC2サービスを開く
+
+    2. 左のメニューから `Auto Scaling Groups` を選択
+
+    3. `hj-sample-asg` をクリック
+
+    4. `Group details` を編集（すべての値を0に設定）
+
+2. RDSを削除
+    1. RDSサービスを開く
+
+    2. 左のメニューから `Database` を選択
+
+    3. RDSの Writer instace を選択
+
+    4. 右上のメニューからActions -> Delete を選択
+
+    5. 表示されたダイアログで以下を実施
+
+        1. Create final snapshot? のチェックを外す
+        2. I acknowledge ..... をチェックする
+        3. テキストボックスに delete me を入力
+        4. Delete ボタンを押す
+---
 ## 前期
 * [4/12の授業内容](./0412/README.md)
 * [4/19の授業内容](./0419/README.md)
