@@ -49,7 +49,20 @@ hj-sample-infra の下に [lambda](https://github.com/cupperservice/hj-sample-in
     + }
     ```
 
-3. 定義を反映する  
+3. common/variables.tf の最後の行に以下を追加する
+    ```
+    variable "lambda" {
+      type = map(any)
+
+      default = {
+        function_file = ""
+        layer_file    = ""
+        role          = ""
+      }
+    }
+    ```
+
+4. 定義を反映する  
 `terraform apply`
 
 ---
@@ -57,7 +70,10 @@ hj-sample-infra の下に [lambda](https://github.com/cupperservice/hj-sample-in
 1. Cloud9からbastionサーバにSSH接続する
 
 2. 新しいバージョンのアプリケーションを取得する  
-`hj-sample-app` の下で `git clone` を実行する
+`hj-sample-app` の下で `git pull` を実行する
+
+3. lambda を使用するバージョンにブランチを切り替える  
+`git checkout feature/use_lambda`
 
 3. template サーバにアプリケーションをコピーする  
     ```
