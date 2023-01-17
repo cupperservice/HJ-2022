@@ -97,9 +97,20 @@ CloudWatch Logs -> Log Groups(/aws/lambda/thumbnail)に以下のログが出て�
 
 ---
 ## アプリケーションサーバを更新する
-1. 起動中の Application サーバ (app-sg) を停止する
+1. 作成した template サーバの AMI のイメージID を terraform の staging/main.tf に反映する
+```
+  app = {
+    image_id = "XXXXX" // ここの値を書き換える
+    instance_type = "t2.small"
+    key_name = "XXXXX"
+    max_size = 0
+    min_size = 0
+  }
+```
 
-2. 新しいインスタンスが立ち上がるのを待つ
+2. terraform apply
 
-3. 動作確認  
+3. 新しいインスタンスが立ち上がるのを待つ
+
+4. 動作確認  
 新しい Application サーバのインスタンスが立ち上がったら、アプリケーションが正常に動作していることを確認する
