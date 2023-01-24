@@ -1,3 +1,15 @@
+# 本授業の必須条件
+1. モジュール1 - モジュール10 の確認テストをすべて合格すること
+https://awsacademy.instructure.com/courses/16254/modules
+
+2. 演習課題のどれか２つを提出すること
+    * [Lambda関数を使ってみる](../Lambda関数を使ってみる/README.md)
+    * [インフラ構築](https://github.com/cupperservice/hj-sample-infra)
+    * [アプリケーションを更新する](../アプリケーションを更新する/README.md)
+
+## 期限
+1/31(火) 17:00
+
 # 2022年度の授業用の資材置き場
 ## 後期
 * [9/6の授業内容](./0906/README.md)
